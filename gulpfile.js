@@ -3,6 +3,7 @@ var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
 var useref = require('gulp-useref');
 var uglify = require('gulp-uglify');
+var cssnano = require('gulp-cssnano');
 var gulpIf = require('gulp-if');
 var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
@@ -32,8 +33,9 @@ gulp.task('watch', ['browserSync'], function(){
 
 gulp.task('browserSync', function(){
 	browserSync.init({
+		port: 8080,
 		server: {
-			baseDir: 'app'
+			baseDir: 'app',
 		}
 	});
 });
